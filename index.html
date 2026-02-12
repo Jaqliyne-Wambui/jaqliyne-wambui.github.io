@@ -1,54 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaqliyne Wambui Mwangi | Infrastructure & Security Engineer</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }
-        header {
-            padding: 60px 20px;
-            text-align: center;
-            background: #1e293b;
-        }
-        h1 {
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #38bdf8;
-            margin-top: 40px;
-        }
-        section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        .highlight {
-            color: #38bdf8;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1e293b;
-            margin-top: 40px;
-        }
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-        ul {
-            padding-left: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaqliyne Wambui Mwangi | Infrastructure & Security Engineer</title>
+
+<style>
+
+/* ---------- GLOBAL ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #0b1120);
+    color: #f1f5f9;
+    line-height: 1.7;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #1e293b;
+    z-index: 1000;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #38bdf8;
+}
+
+header p {
+    color: #94a3b8;
+}
+
+/* ---------- SECTIONS ---------- */
+
+section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+section:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+section:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+h2 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 12px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ---------- CARD STYLE ---------- */
+
+section {
+    background: rgba(30, 41, 59, 0.4);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.05);
+    transition: 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.15);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #64748b;
+    margin-top: 80px;
+}
+
+/* ---------- ANIMATION ---------- */
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a {
+    color: #38bdf8;
+}
+
+</style>
 </head>
+
 <body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#monitoring">Monitoring</a>
+    <a href="#security">Security</a>
+    <a href="#incident">Incidents</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 <header>
     <h1>Jaqliyne Wambui Mwangi</h1>
@@ -56,20 +158,15 @@
     <p>Building resilient, secure, SLA-driven FinTech systems.</p>
 </header>
 
-<section>
+<section id="about">
     <h2>About Me</h2>
     <p>
-        I am an Infrastructure and Security Engineer supporting mission-critical cloud payment systems across multi-country environments. 
-        My expertise spans Linux system administration, VMware virtualization, production monitoring, incident response, 
-        and security alert triage within 24/7 SLA-driven operations.
-    </p>
-    <p>
-        I operate at the intersection of infrastructure reliability and security, ensuring systems are not only available 
-        and performant, but also resilient and defensible.
+        I am an Infrastructure and Security Engineer supporting mission-critical cloud payment systems across multi-country environments.
+        I operate at the intersection of infrastructure reliability and security, ensuring systems are available, performant, and defensible.
     </p>
 </section>
 
-<section>
+<section id="expertise">
     <h2>Core Expertise</h2>
     <ul>
         <li>Linux Administration (SUSE, Euler OS)</li>
@@ -81,66 +178,37 @@
     </ul>
 </section>
 
-<section>
+<section id="monitoring">
     <h2>Monitoring & Performance Engineering</h2>
-    <p>
-        I actively monitor multi-region production environments using Dynatrace, Grafana, and Digital View dashboards.
-        I tune alert thresholds to ensure early detection while minimizing alert fatigue.
-    </p>
     <ul>
-        <li>CPU & Memory utilization monitoring and threshold optimization</li>
-        <li>Filesystem usage monitoring (90% alert threshold)</li>
-        <li>Disk I/O performance monitoring (maintaining I/O idle above 30%)</li>
-        <li>Modified dashboards to visualize TPS (Transactions Per Second) trends</li>
-        <li>Proactive SLA-driven performance review</li>
+        <li>CPU & Memory threshold optimization</li>
+        <li>Filesystem monitoring (90% alert threshold)</li>
+        <li>Disk I/O idle maintained above 30%</li>
+        <li>TPS dashboard customization</li>
+        <li>Proactive SLA-driven reviews</li>
     </ul>
-    <p>
-        This proactive monitoring approach improves incident response speed and ensures sustained availability of mission-critical payment systems.
-    </p>
 </section>
 
-<section>
+<section id="security">
     <h2>Security Monitoring & SOC Operations</h2>
-    <p>
-        I support security monitoring operations across production environments, combining infrastructure visibility with threat detection practices.
-    </p>
     <ul>
-        <li>Manual EDR review and endpoint security validation</li>
-        <li>Firewall log monitoring and anomaly detection</li>
-        <li>SIEM alert validation and correlation (including exposure to Splunk)</li>
-        <li>First-line alert triage and escalation support</li>
+        <li>Manual EDR review</li>
+        <li>Firewall log monitoring</li>
+        <li>SIEM validation (Splunk exposure)</li>
+        <li>First-line alert triage</li>
     </ul>
-    <p>
-        My infrastructure background enhances my ability to distinguish between operational anomalies and potential security threats.
-    </p>
 </section>
 
-<section>
+<section id="incident">
     <h2>Incident Management & Regional SPOC</h2>
-    <p>
-        I operate within 24/7 SLA-driven production environments, including independent night-shift coverage across multiple markets.
-    </p>
     <ul>
-        <li>Primary responder during P1 and P2 incidents</li>
-        <li>Active participation in incident bridge calls</li>
-        <li>Escalation coordination across infrastructure and application teams</li>
-        <li>Regional Single Point of Contact (SPOC) for Tanzania market</li>
-        <li>Incident reporting and impact communication</li>
+        <li>P1 & P2 primary responder</li>
+        <li>Incident bridge participation</li>
+        <li>Cross-team escalation coordination</li>
+        <li>Tanzania Regional SPOC</li>
     </ul>
-    <p>
-        Supporting high-severity incidents across distributed markets has strengthened my decision-making under pressure and cross-functional coordination skills.
-    </p>
 </section>
 
-<section>
+<section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:jaqliyne@outlook.com">jaqliyne@outlook.com</a></p>
-    <p>Location: Nairobi, Kenya</p>
-</section>
-
-<footer>
-    <p>© 2026 Jaqliyne Wambui Mwangi</p>
-</footer>
-
-</body>
-</html>
+    <p
