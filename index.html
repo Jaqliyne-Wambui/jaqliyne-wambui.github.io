@@ -3,28 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jaqliyne Mwangi | Infrastructure & Security Engineer</title>
+<title>Jaqliyne Wambui Mwangi | Infrastructure Engineer</title>
 
 <style>
+
+/* ---------- RESET ---------- */
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
     margin:0;
     font-family:Segoe UI, sans-serif;
-    background:#0b0f19;
-    color:#e6edf3;
+    background:#020617;
+    color:#e2e8f0;
+    overflow-x:hidden;
 }
 
-/* NAV */
+/* ---------- SERVER BACKGROUND ---------- */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=2000");
+    background-size:cover;
+    background-position:center;
+    opacity:.06;
+    z-index:-1;
+}
+
+/* ---------- NAV ---------- */
 nav{
     position:sticky;
     top:0;
-    background:#0b0f19ee;
+    background:#020617e8;
     backdrop-filter:blur(10px);
     display:flex;
     justify-content:center;
-    gap:40px;
+    flex-wrap:wrap;
+    gap:30px;
     padding:18px;
-    border-bottom:1px solid #1f2937;
+    border-bottom:1px solid #1e293b;
     z-index:999;
 }
 nav a{
@@ -35,47 +52,53 @@ nav a{
 }
 nav a:hover{color:#38bdf8}
 
-/* HERO */
+/* ---------- HERO ---------- */
 .hero{
-    display:flex;
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     gap:60px;
-    max-width:1100px;
-    margin:80px auto;
-    padding:20px;
     align-items:center;
 }
+
 .hero img{
-    width:320px;
-    border-radius:12px;
+    width:100%;
+    max-width:380px;
+    border-radius:14px;
+    box-shadow:0 0 40px rgba(56,189,248,.15);
 }
+
 .hero-text h1{
-    font-size:42px;
+    font-size:clamp(28px,4vw,44px);
     margin:0;
+}
+.hero-text .role{
+    color:#38bdf8;
+    margin:10px 0 20px;
+    font-weight:600;
 }
 .hero-text p{
     color:#94a3b8;
-    line-height:1.6;
-}
-.tag{
-    color:#38bdf8;
-    font-weight:600;
+    line-height:1.7;
 }
 
-/* SECTIONS */
+/* ---------- SECTION ---------- */
 section{
     max-width:1100px;
-    margin:70px auto;
-    padding:40px;
-    background:#0f172a;
+    margin:60px auto;
+    padding:40px 25px;
+    background:#020617cc;
     border:1px solid #1e293b;
-    border-radius:12px;
+    border-radius:14px;
 }
 h2{
     color:#38bdf8;
     margin-bottom:20px;
 }
 
-/* GRID */
+/* ---------- GRID ---------- */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -84,24 +107,36 @@ h2{
 .card{
     background:#020617;
     padding:20px;
-    border-radius:10px;
+    border-radius:12px;
     border:1px solid #1e293b;
 }
 .card h3{margin-top:0}
 
-/* TIMELINE */
+/* ---------- TIMELINE ---------- */
 .timeline-item{
     border-left:3px solid #38bdf8;
     padding-left:20px;
-    margin:25px 0;
+    margin:30px 0;
 }
 
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 footer{
     text-align:center;
-    padding:50px;
+    padding:60px 20px;
     color:#64748b;
 }
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+    .hero img{
+        margin:auto;
+    }
+}
+
 </style>
 </head>
 
@@ -109,7 +144,7 @@ footer{
 
 <nav>
 <a href="#about">About</a>
-<a href="#skills">Capabilities</a>
+<a href="#capabilities">Capabilities</a>
 <a href="#monitoring">Monitoring</a>
 <a href="#security">Security</a>
 <a href="#incident">Incidents</a>
@@ -120,18 +155,19 @@ footer{
 <!-- HERO -->
 <div class="hero">
 <img src="me.jpg">
+
 <div class="hero-text">
 <h1>Jaqliyne Wambui Mwangi</h1>
-<p class="tag">Infrastructure & Operations Engineer — FinTech Production Systems</p>
+<div class="role">Infrastructure & Operations Engineer — FinTech Production Systems</div>
 
 <p>
 Infrastructure engineer supporting mission-critical cloud payment systems across multi-country environments.
-Operating at the intersection of reliability, performance engineering, and security operations.
+Operating across Linux production infrastructure, VMware virtualization, observability platforms,
+and security alert workflows within 24/7 SLA-driven environments.
 </p>
 
 <p>
-Specialized in Linux production environments, VMware virtualization, infrastructure monitoring,
-SLA-driven operations, SIEM alert triage, and regional incident coordination.
+Focused on availability, performance stability, alert response, and coordinated incident handling across regional deployments.
 </p>
 </div>
 </div>
@@ -140,37 +176,37 @@ SLA-driven operations, SIEM alert triage, and regional incident coordination.
 <section id="about">
 <h2>Operational Profile</h2>
 <p>
-3+ years supporting 24/7 production infrastructure for cloud-based financial systems.
-Responsible for system availability, alert response, performance monitoring, patching,
-incident coordination, and infrastructure health validation across regional deployments.
+Infrastructure & Operations Engineer with 3+ years supporting cloud-based financial platforms.
+Responsible for maintaining uptime, monitoring infrastructure performance, validating alerts,
+coordinating incident response, and ensuring SLA adherence across distributed systems.
 </p>
 </section>
 
 <!-- CAPABILITIES -->
-<section id="skills">
-<h2>Core Infrastructure Capabilities</h2>
+<section id="capabilities">
+<h2>Infrastructure Capability Areas</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Linux Production Administration</h3>
+<h3>Linux Production Systems</h3>
 <ul>
-<li>SUSE Linux & Euler OS</li>
-<li>System patching & maintenance</li>
-<li>Filesystem monitoring</li>
+<li>SUSE Linux & Euler OS administration</li>
+<li>OS patching & maintenance</li>
+<li>Filesystem capacity monitoring</li>
 <li>Service health validation</li>
-<li>DNS & SSL lifecycle</li>
+<li>DNS & SSL lifecycle management</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>Monitoring & Observability</h3>
+<h3>Observability & Monitoring</h3>
 <ul>
 <li>Dynatrace dashboards</li>
-<li>Grafana performance views</li>
+<li>Grafana performance tracking</li>
 <li>TPS & latency monitoring</li>
-<li>Threshold tuning</li>
-<li>Proactive alert review</li>
+<li>Alert threshold tuning</li>
+<li>SLA-driven reviews</li>
 </ul>
 </div>
 
@@ -178,17 +214,17 @@ incident coordination, and infrastructure health validation across regional depl
 <h3>Virtualization</h3>
 <ul>
 <li>VMware vSphere</li>
-<li>ESXi administration</li>
+<li>ESXi host management</li>
 <li>vMotion operations</li>
-<li>VM lifecycle</li>
+<li>VM lifecycle tasks</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>Security Operations</h3>
+<h3>Security Monitoring</h3>
 <ul>
-<li>SIEM alert validation</li>
-<li>EDR review</li>
+<li>SIEM log validation</li>
+<li>EDR alert review</li>
 <li>Firewall log checks</li>
 <li>Initial incident investigation</li>
 </ul>
@@ -202,10 +238,10 @@ incident coordination, and infrastructure health validation across regional depl
 <h2>Monitoring & Performance Engineering</h2>
 <ul>
 <li>Real-time infrastructure monitoring using Dynatrace & Grafana</li>
-<li>CPU, memory, and disk utilization threshold tuning</li>
-<li>Filesystem capacity alerting (90% thresholds)</li>
-<li>Transaction performance dashboard reviews</li>
-<li>SLA-driven proactive reviews</li>
+<li>CPU, memory, disk threshold tuning</li>
+<li>Filesystem 90% alert policies</li>
+<li>Transaction performance dashboards</li>
+<li>Proactive SLA reviews</li>
 </ul>
 </section>
 
@@ -213,23 +249,23 @@ incident coordination, and infrastructure health validation across regional depl
 <section id="security">
 <h2>Security & SOC Operations</h2>
 <ul>
-<li>Manual SIEM log review</li>
-<li>EDR alert validation</li>
-<li>Firewall event monitoring</li>
-<li>Initial triage & escalation</li>
+<li>Manual SIEM alert review</li>
+<li>EDR validation workflows</li>
+<li>Firewall event checks</li>
+<li>Escalation coordination</li>
 <li>Vulnerability monitoring support</li>
 </ul>
 </section>
 
 <!-- INCIDENT -->
 <section id="incident">
-<h2>Incident Management & Regional Operations</h2>
+<h2>Incident & Regional Operations</h2>
 <ul>
 <li>P1/P2 primary responder</li>
-<li>Incident bridge coordination</li>
+<li>Incident bridge participation</li>
 <li>Cross-team escalation</li>
-<li>Regional SPOC responsibilities</li>
-<li>RCA support & recovery validation</li>
+<li>Regional SPOC support</li>
+<li>RCA contribution</li>
 </ul>
 </section>
 
@@ -239,22 +275,22 @@ incident coordination, and infrastructure health validation across regional depl
 
 <div class="timeline-item">
 <h3>M-Pesa Africa — Operations Engineer</h3>
-<p>Oct 2024 – Present</p>
+<p>2024 – Present</p>
 <ul>
-<li>Administer Linux production systems in cloud payment infrastructure</li>
-<li>Monitor performance using Dynatrace & Grafana</li>
-<li>Ensure SLA compliance across multi-country systems</li>
-<li>Manage VMware environments</li>
+<li>Maintain Linux production systems</li>
+<li>Monitor performance via Dynatrace & Grafana</li>
+<li>Ensure SLA compliance</li>
+<li>Manage VMware infrastructure</li>
 <li>Review SIEM & EDR alerts</li>
-<li>Support disaster recovery testing</li>
+<li>Support DR testing</li>
 </ul>
 </div>
 
 <div class="timeline-item">
 <h3>Ryanada Ltd (Truehost/Cloudoon)</h3>
-<p>Technical Support Engineer — 2022–2023</p>
+<p>2022 – 2023</p>
 <ul>
-<li>Managed cloud hosting infrastructure</li>
+<li>Cloud hosting infrastructure support</li>
 <li>DNS & SSL configuration</li>
 <li>Server troubleshooting</li>
 <li>REST API support</li>
@@ -263,12 +299,11 @@ incident coordination, and infrastructure health validation across regional depl
 
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
 <p>Nairobi, Kenya</p>
-<p>📧 jaqliyne@outlook.com</p>
-<p>📞 +254 716 161 929</p>
+<p>jaqliyne@outlook.com</p>
+<p>+254 716 161 929</p>
 </section>
 
 <footer>
