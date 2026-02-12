@@ -3,230 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jaqliyne Wambui Mwangi | Infrastructure & Security Engineer</title>
+<title>Jaqliyne Mwangi | Infrastructure Engineer</title>
+
 <style>
-
-/* ---------- GLOBAL ---------- */
-html {
-    scroll-behavior: smooth;
-}
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0f172a;
-    color: #f1f5f9;
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:#0b0f19;
+    color:#fff;
 }
 
-/* ---------- NAV ---------- */
-nav {
-    position: sticky;
-    top: 0;
-    background: #0f172acc;
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-    border-bottom: 1px solid #1e293b;
-    z-index: 999;
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:20px;
+    position:sticky;
+    top:0;
+    background:#0b0f19;
 }
-nav a {
-    color: #94a3b8;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    letter-spacing: 0.7px;
+nav a{
+    color:#aaa;
+    text-decoration:none;
 }
-nav a:hover,
-nav a.active {
-    color: #38bdf8;
-    transform: scale(1.05);
+nav a:hover{color:#fff}
+
+/* ABOUT */
+.about{
+    display:flex;
+    gap:40px;
+    max-width:1000px;
+    margin:60px auto;
+    padding:20px;
+}
+.about img{
+    width:260px;
+    border-radius:10px;
+}
+.about-text{flex:1;color:#bbb}
+
+/* SKILLS */
+.skills{
+    text-align:center;
+    margin-top:80px;
+}
+.skill-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:40px;
+    max-width:900px;
+    margin:40px auto;
+}
+.circle{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:8px solid;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+}
+.html{border-color:#ff4d4d}
+.css{border-color:#3b82f6}
+.js{border-color:#facc15}
+.node{border-color:#22c55e}
+.react{border-color:#22d3ee}
+
+/* TIMELINE */
+.timeline{
+    max-width:900px;
+    margin:80px auto;
+}
+.timeline-item{
+    background:#111827;
+    padding:20px;
+    border-radius:8px;
+    margin:20px 0;
 }
 
-/* ---------- HEADER ---------- */
-header {
-    text-align: center;
-    padding: 100px 20px 40px;
+footer{
+    text-align:center;
+    padding:40px;
+    color:#777;
 }
-header h1 {
-    font-size: 3rem;
-    animation: fadeDown 1s ease-out both;
-}
-header p {
-    font-size: 1.1rem;
-    color: #94a3b8;
-    animation: fadeUp 1.2s ease-out both;
-}
-@keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ---------- SECTIONS ---------- */
-section {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px 20px;
-    background: #1e293b;
-    border-radius: 10px;
-    border: 1px solid #334155;
-    opacity: 0;
-    transform: scale(0.92);
-    transition: 0.6s ease-out;
-}
-section.show {
-    opacity: 1;
-    transform: scale(1);
-}
-h2 {
-    color: #38bdf8;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-}
-ul {
-    padding-left: 18px;
-}
-li {
-    margin-bottom: 8px;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #64748b;
-    margin-top: 30px;
-}
-
 </style>
-
-
 </head>
 
 <body>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#expertise">Expertise</a>
-    <a href="#monitoring">Monitoring</a>
-    <a href="#security">Security</a>
-    <a href="#incident">Incidents</a>
-    <a href="#contact">Contact</a>
+<a href="#">Home</a>
+<a href="#">Projects</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
 </nav>
 
-<header>
-    <h1>Jaqliyne Wambui Mwangi</h1>
-    <p class="highlight">Infrastructure, Security & Reliability Engineer</p>
-    <p>Building resilient, secure, SLA-driven FinTech systems.</p>
-</header>
-
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I support mission-critical cloud payment systems across multi-country environments, 
-        operating at the intersection of reliability and security.
-    </p>
+<section class="about">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" />
+<div class="about-text">
+<h2>About Me</h2>
+<p>
+Infrastructure & Security Engineer supporting mission-critical fintech systems across multi-country environments.
+</p>
+<button>Download CV</button>
+</div>
 </section>
 
-<section id="expertise">
-    <h2>Core Expertise</h2>
-    <ul>
-        <li>Linux Administration (SUSE, Euler OS)</li>
-        <li>VMware vSphere & ESXi</li>
-        <li>Infrastructure Monitoring (Dynatrace, Grafana)</li>
-        <li>SIEM & EDR Alert Triage</li>
-        <li>Incident & SLA Management</li>
-        <li>Disaster Recovery Support</li>
-    </ul>
+<section class="skills">
+<h2>Skills</h2>
+
+<div class="skill-grid">
+
+<div>
+<div class="circle html">98%</div>
+<p>Linux</p>
+</div>
+
+<div>
+<div class="circle css">98%</div>
+<p>Monitoring</p>
+</div>
+
+<div>
+<div class="circle js">98%</div>
+<p>Security</p>
+</div>
+
+<div>
+<div class="circle node">98%</div>
+<p>VMware</p>
+</div>
+
+<div>
+<div class="circle react">98%</div>
+<p>Incident Mgmt</p>
+</div>
+
+</div>
 </section>
 
-<section id="monitoring">
-    <h2>Monitoring & Performance Engineering</h2>
-    <ul>
-        <li>CPU & Memory threshold optimization</li>
-        <li>Filesystem monitoring (90% alert threshold)</li>
-        <li>Disk I/O idle maintained above 30%</li>
-        <li>TPS dashboard customization</li>
-        <li>Proactive SLA-driven reviews</li>
-    </ul>
-</section>
+<section class="timeline">
+<h2>Education & Experience</h2>
 
-<section id="security">
-    <h2>Security Monitoring & SOC Operations</h2>
-    <ul>
-        <li>Manual EDR review</li>
-        <li>Firewall log monitoring</li>
-        <li>SIEM validation (Splunk exposure)</li>
-        <li>First-line alert triage</li>
-    </ul>
-</section>
+<div class="timeline-item">FinTech Infrastructure Engineer — 2024-Present</div>
+<div class="timeline-item">SOC & Monitoring Engineer — 2022-2024</div>
+<div class="timeline-item">Systems Engineer — 2020-2022</div>
 
-<section id="incident">
-    <h2>Incident Management & Regional SPOC</h2>
-    <ul>
-        <li>P1 & P2 primary responder</li>
-        <li>Incident bridge participation</li>
-        <li>Cross-team escalation coordination</li>
-        <li>Tanzania Regional SPOC</li>
-    </ul>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:jaqliyne@outlook.com">jaqliyne@outlook.com</a></p>
-    <p>Location: Nairobi, Kenya</p>
 </section>
 
 <footer>
-    © 2026 Jaqliyne Wambui Mwangi
+© 2026 Jaqliyne Mwangi
 </footer>
-
-
-<script>
-
-// Smooth scroll with active menu highlight
-const navLinks = document.querySelectorAll("nav a");
-const allSections = document.querySelectorAll("section");
-
-// Smooth scroll behavior
-navLinks.forEach(link => {
-    link.addEventListener("click", function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    });
-});
-
-// Intersection Observer for entry animations and nav activation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            // Highlight nav
-            navLinks.forEach(nav => {
-                nav.classList.toggle(
-                    "active",
-                    nav.getAttribute("href").slice(1) === entry.target.id
-                );
-            });
-        }
-    });
-}, { threshold: 0.28 });
-
-allSections.forEach(section => {
-    observer.observe(section);
-});
-
-</script>
-
 
 </body>
 </html>
