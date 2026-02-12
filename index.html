@@ -3,90 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jaqliyne Mwangi | Infrastructure Engineer</title>
+<title>Jaqliyne Mwangi | Infrastructure & Security Engineer</title>
 
 <style>
+html{scroll-behavior:smooth}
 body{
     margin:0;
     font-family:Segoe UI, sans-serif;
     background:#0b0f19;
-    color:#fff;
+    color:#e6edf3;
 }
 
 /* NAV */
 nav{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    padding:20px;
     position:sticky;
     top:0;
-    background:#0b0f19;
+    background:#0b0f19ee;
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:18px;
+    border-bottom:1px solid #1f2937;
+    z-index:999;
 }
 nav a{
-    color:#aaa;
+    color:#94a3b8;
     text-decoration:none;
+    font-size:13px;
+    letter-spacing:1px;
 }
-nav a:hover{color:#fff}
+nav a:hover{color:#38bdf8}
 
-/* ABOUT */
-.about{
+/* HERO */
+.hero{
     display:flex;
-    gap:40px;
-    max-width:1000px;
-    margin:60px auto;
+    gap:60px;
+    max-width:1100px;
+    margin:80px auto;
     padding:20px;
-}
-.about img{
-    width:260px;
-    border-radius:10px;
-}
-.about-text{flex:1;color:#bbb}
-
-/* SKILLS */
-.skills{
-    text-align:center;
-    margin-top:80px;
-}
-.skill-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:40px;
-    max-width:900px;
-    margin:40px auto;
-}
-.circle{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    border:8px solid;
-    display:flex;
     align-items:center;
-    justify-content:center;
-    margin:auto;
 }
-.html{border-color:#ff4d4d}
-.css{border-color:#3b82f6}
-.js{border-color:#facc15}
-.node{border-color:#22c55e}
-.react{border-color:#22d3ee}
+.hero img{
+    width:320px;
+    border-radius:12px;
+}
+.hero-text h1{
+    font-size:42px;
+    margin:0;
+}
+.hero-text p{
+    color:#94a3b8;
+    line-height:1.6;
+}
+.tag{
+    color:#38bdf8;
+    font-weight:600;
+}
+
+/* SECTIONS */
+section{
+    max-width:1100px;
+    margin:70px auto;
+    padding:40px;
+    background:#0f172a;
+    border:1px solid #1e293b;
+    border-radius:12px;
+}
+h2{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+.card{
+    background:#020617;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid #1e293b;
+}
+.card h3{margin-top:0}
 
 /* TIMELINE */
-.timeline{
-    max-width:900px;
-    margin:80px auto;
-}
 .timeline-item{
-    background:#111827;
-    padding:20px;
-    border-radius:8px;
-    margin:20px 0;
+    border-left:3px solid #38bdf8;
+    padding-left:20px;
+    margin:25px 0;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
-    padding:40px;
-    color:#777;
+    padding:50px;
+    color:#64748b;
 }
 </style>
 </head>
@@ -94,67 +108,171 @@ footer{
 <body>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Projects</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<a href="#about">About</a>
+<a href="#skills">Capabilities</a>
+<a href="#monitoring">Monitoring</a>
+<a href="#security">Security</a>
+<a href="#incident">Incidents</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<section class="about">
-<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" />
-<div class="about-text">
-<h2>About Me</h2>
+<!-- HERO -->
+<div class="hero">
+<img src="me.jpg">
+<div class="hero-text">
+<h1>Jaqliyne Wambui Mwangi</h1>
+<p class="tag">Infrastructure & Operations Engineer — FinTech Production Systems</p>
+
 <p>
-Infrastructure & Security Engineer supporting mission-critical fintech systems across multi-country environments.
+Infrastructure engineer supporting mission-critical cloud payment systems across multi-country environments.
+Operating at the intersection of reliability, performance engineering, and security operations.
 </p>
-<button>Download CV</button>
+
+<p>
+Specialized in Linux production environments, VMware virtualization, infrastructure monitoring,
+SLA-driven operations, SIEM alert triage, and regional incident coordination.
+</p>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>Operational Profile</h2>
+<p>
+3+ years supporting 24/7 production infrastructure for cloud-based financial systems.
+Responsible for system availability, alert response, performance monitoring, patching,
+incident coordination, and infrastructure health validation across regional deployments.
+</p>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="skills">
+<h2>Core Infrastructure Capabilities</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Linux Production Administration</h3>
+<ul>
+<li>SUSE Linux & Euler OS</li>
+<li>System patching & maintenance</li>
+<li>Filesystem monitoring</li>
+<li>Service health validation</li>
+<li>DNS & SSL lifecycle</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Monitoring & Observability</h3>
+<ul>
+<li>Dynatrace dashboards</li>
+<li>Grafana performance views</li>
+<li>TPS & latency monitoring</li>
+<li>Threshold tuning</li>
+<li>Proactive alert review</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Virtualization</h3>
+<ul>
+<li>VMware vSphere</li>
+<li>ESXi administration</li>
+<li>vMotion operations</li>
+<li>VM lifecycle</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Security Operations</h3>
+<ul>
+<li>SIEM alert validation</li>
+<li>EDR review</li>
+<li>Firewall log checks</li>
+<li>Initial incident investigation</li>
+</ul>
+</div>
+
 </div>
 </section>
 
-<section class="skills">
-<h2>Skills</h2>
-
-<div class="skill-grid">
-
-<div>
-<div class="circle html">98%</div>
-<p>Linux</p>
-</div>
-
-<div>
-<div class="circle css">98%</div>
-<p>Monitoring</p>
-</div>
-
-<div>
-<div class="circle js">98%</div>
-<p>Security</p>
-</div>
-
-<div>
-<div class="circle node">98%</div>
-<p>VMware</p>
-</div>
-
-<div>
-<div class="circle react">98%</div>
-<p>Incident Mgmt</p>
-</div>
-
-</div>
+<!-- MONITORING -->
+<section id="monitoring">
+<h2>Monitoring & Performance Engineering</h2>
+<ul>
+<li>Real-time infrastructure monitoring using Dynatrace & Grafana</li>
+<li>CPU, memory, and disk utilization threshold tuning</li>
+<li>Filesystem capacity alerting (90% thresholds)</li>
+<li>Transaction performance dashboard reviews</li>
+<li>SLA-driven proactive reviews</li>
+</ul>
 </section>
 
-<section class="timeline">
-<h2>Education & Experience</h2>
+<!-- SECURITY -->
+<section id="security">
+<h2>Security & SOC Operations</h2>
+<ul>
+<li>Manual SIEM log review</li>
+<li>EDR alert validation</li>
+<li>Firewall event monitoring</li>
+<li>Initial triage & escalation</li>
+<li>Vulnerability monitoring support</li>
+</ul>
+</section>
 
-<div class="timeline-item">FinTech Infrastructure Engineer — 2024-Present</div>
-<div class="timeline-item">SOC & Monitoring Engineer — 2022-2024</div>
-<div class="timeline-item">Systems Engineer — 2020-2022</div>
+<!-- INCIDENT -->
+<section id="incident">
+<h2>Incident Management & Regional Operations</h2>
+<ul>
+<li>P1/P2 primary responder</li>
+<li>Incident bridge coordination</li>
+<li>Cross-team escalation</li>
+<li>Regional SPOC responsibilities</li>
+<li>RCA support & recovery validation</li>
+</ul>
+</section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Professional Experience</h2>
+
+<div class="timeline-item">
+<h3>M-Pesa Africa — Operations Engineer</h3>
+<p>Oct 2024 – Present</p>
+<ul>
+<li>Administer Linux production systems in cloud payment infrastructure</li>
+<li>Monitor performance using Dynatrace & Grafana</li>
+<li>Ensure SLA compliance across multi-country systems</li>
+<li>Manage VMware environments</li>
+<li>Review SIEM & EDR alerts</li>
+<li>Support disaster recovery testing</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>Ryanada Ltd (Truehost/Cloudoon)</h3>
+<p>Technical Support Engineer — 2022–2023</p>
+<ul>
+<li>Managed cloud hosting infrastructure</li>
+<li>DNS & SSL configuration</li>
+<li>Server troubleshooting</li>
+<li>REST API support</li>
+</ul>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<p>Nairobi, Kenya</p>
+<p>📧 jaqliyne@outlook.com</p>
+<p>📞 +254 716 161 929</p>
 </section>
 
 <footer>
-© 2026 Jaqliyne Mwangi
+© 2026 Jaqliyne Wambui Mwangi
 </footer>
 
 </body>
