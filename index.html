@@ -6,337 +6,253 @@
 <title>Jaqliyne Wambui Mwangi | Infrastructure Engineer</title>
 
 <style>
-
-/* ---------- RESET ---------- */
+/* ---------- RESET & BASE ---------- */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
     margin:0;
-    font-family:Segoe UI, sans-serif;
-    background:#020617;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background:#0a0a0c;
     color:#e2e8f0;
-    overflow-x:hidden;
+    line-height: 1.6;
 }
 
-/* ---------- SERVER BACKGROUND ---------- */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:url("https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=2000");
-    background-size:cover;
-    background-position:center;
-    opacity:.06;
-    z-index:-1;
+/* ---------- BENTO GRID LAYOUT ---------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    gap: 20px;
 }
+
+/* ---------- REUSABLE CARD STYLE ---------- */
+.bento-card {
+    background: #111114;
+    border: 1px solid #27272a;
+    border-radius: 24px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.bento-card:hover {
+    border-color: #38bdf8;
+}
+
+/* ---------- SPECIFIC BLOCK SIZING ---------- */
+.hero-block { grid-column: span 3; grid-row: span 2; display: flex; gap: 40px; align-items: center; }
+.profile-img-block { grid-column: span 1; grid-row: span 2; overflow: hidden; padding: 0; }
+.profile-img-block img { width: 100%; height: 100%; object-fit: cover; }
+
+.skills-block { grid-column: span 2; }
+.stat-block { grid-column: span 1; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.wide-block { grid-column: span 4; }
+.half-block { grid-column: span 2; }
+
+/* ---------- TYPOGRAPHY ---------- */
+h1 { font-size: 3rem; margin: 0; font-weight: 800; letter-spacing: -1px; }
+h2 { color: #38bdf8; font-size: 1.5rem; margin-top: 0; }
+h3 { color: #f8fafc; margin-top: 0; }
+.role { color: #38bdf8; font-weight: 600; font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+p { color: #94a3b8; }
+ul { padding-left: 20px; color: #94a3b8; }
+li { margin-bottom: 8px; }
 
 /* ---------- NAV ---------- */
-nav{
-    position:sticky;
-    top:0;
-    background:#020617e8;
-    backdrop-filter:blur(10px);
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-    padding:18px;
-    border-bottom:1px solid #1e293b;
-    z-index:999;
+nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    display: flex; justify-content: center; gap: 25px;
+    border-bottom: 1px solid #27272a;
 }
-nav a{
-    color:#94a3b8;
-    text-decoration:none;
-    font-size:13px;
-    letter-spacing:1px;
-}
-nav a:hover{color:#38bdf8}
+nav a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+nav a:hover { color: #38bdf8; }
 
-/* ---------- HERO ---------- */
-.hero{
-    max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
+/* ---------- UI ELEMENTS ---------- */
+.tag {
+    display: inline-block;
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
 }
 
-.hero img{
-    width:100%;
-    max-width:380px;
-    border-radius:14px;
-    box-shadow:0 0 40px rgba(56,189,248,.15);
-}
-
-.hero-text h1{
-    font-size:clamp(28px,4vw,44px);
-    margin:0;
-}
-.hero-text .role{
-    color:#38bdf8;
-    margin:10px 0 20px;
-    font-weight:600;
-}
-.hero-text p{
-    color:#94a3b8;
-    line-height:1.7;
-}
-
-/* ---------- SECTION ---------- */
-section{
-    max-width:1100px;
-    margin:60px auto;
-    padding:40px 25px;
-    background:#020617cc;
-    border:1px solid #1e293b;
-    border-radius:14px;
-}
-h2{
-    color:#38bdf8;
-    margin-bottom:20px;
-}
-
-/* ---------- GRID ---------- */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-.card{
-    background:#020617;
-    padding:20px;
-    border-radius:12px;
-    border:1px solid #1e293b;
-}
-.card h3{margin-top:0}
-
-/* ---------- TIMELINE ---------- */
-.timeline-item{
-    border-left:3px solid #38bdf8;
-    padding-left:20px;
-    margin:30px 0;
-}
-
-/* ---------- FOOTER ---------- */
-footer{
-    text-align:center;
-    padding:60px 20px;
-    color:#64748b;
-}
+.contact-link { color: #38bdf8; text-decoration: none; display: block; margin: 10px 0; font-size: 1.1rem; }
+.social-links { display: flex; gap: 20px; margin-top: 20px; }
+.social-links a { color: #f8fafc; text-decoration: none; font-weight: bold; border-bottom: 2px solid #38bdf8; }
 
 /* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-    .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-    .hero img{
-        margin:auto;
-    }
+@media (max-width: 1024px) {
+    .container { grid-template-columns: repeat(2, 1fr); }
+    .hero-block, .wide-block, .half-block { grid-column: span 2; }
+    .hero-block { flex-direction: column; text-align: center; }
 }
-/* ---------- CONTACT LINKS ---------- */
-#contact a{
-    color:#38bdf8;
-    text-decoration:none;
+@media (max-width: 600px) {
+    .container { grid-template-columns: 1fr; }
+    .hero-block, .profile-img-block, .skills-block, .stat-block, .wide-block, .half-block { grid-column: span 1; }
+    h1 { font-size: 2rem; }
 }
-
-#contact a:hover{
-    text-decoration:underline;
-}
-
 </style>
 </head>
-
 <body>
 
 <nav>
-<a href="#about">About</a>
-<a href="#capabilities">Capabilities</a>
-<a href="#monitoring">Monitoring</a>
-<a href="#security">Security</a>
-<a href="#incident">Incidents</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-<img src="me.jpg.png">
+<main class="container">
 
-<div class="hero-text">
-<h1>Jaqliyne Wambui Mwangi</h1>
-<div class="role">Infrastructure & Operations Engineer — FinTech Production Systems</div>
+    <section class="bento-card hero-block">
+        <div class="hero-content">
+            <span class="tag">Available for Ops</span>
+            <h1>Jaqliyne Wambui Mwangi</h1>
+            <div class="role">Infrastructure & Operations Engineer — FinTech Production Systems</div>
+            <p>Infrastructure engineer supporting mission-critical cloud payment systems across multi-country environments. Operating across Linux production infrastructure, VMware virtualization, observability platforms, and security alert workflows within 24/7 SLA-driven environments.</p>
+            <p>Focused on availability, performance stability, alert response, and coordinated incident handling across regional deployments.</p>
+        </div>
+    </section>
 
-<p>
-Infrastructure engineer supporting mission-critical cloud payment systems across multi-country environments.
-Operating across Linux production infrastructure, VMware virtualization, observability platforms,
-and security alert workflows within 24/7 SLA-driven environments.
-</p>
+    <div class="bento-card profile-img-block">
+        <img src="me.jpg.png" alt="Jaqliyne Wambui Mwangi">
+    </div>
 
-<p>
-Focused on availability, performance stability, alert response, and coordinated incident handling across regional deployments.
-</p>
-</div>
-</div>
+    <section id="about" class="bento-card half-block">
+        <h2>Operational Profile</h2>
+        <p>Infrastructure & Operations Engineer with 3+ years supporting cloud-based financial platforms. Responsible for maintaining uptime, monitoring infrastructure performance, validating alerts, coordinating incident response, and ensuring SLA adherence across distributed systems.</p>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>Operational Profile</h2>
-<p>
-Infrastructure & Operations Engineer with 3+ years supporting cloud-based financial platforms.
-Responsible for maintaining uptime, monitoring infrastructure performance, validating alerts,
-coordinating incident response, and ensuring SLA adherence across distributed systems.
-</p>
-</section>
+    <section class="bento-card stat-block">
+        <h3 style="color:#38bdf8; font-size: 2.5rem; margin:0;">99.95%</h3>
+        <p>System Availability</p>
+    </section>
 
-<!-- CAPABILITIES -->
-<section id="capabilities">
-<h2>Infrastructure Capability Areas</h2>
+    <section class="bento-card stat-block">
+        <h3 style="color:#38bdf8; font-size: 2.5rem; margin:0;">30%</h3>
+        <p>MTTR Reduction</p>
+    </section>
 
-<div class="grid">
+    <section id="capabilities" class="bento-card wide-block">
+        <h2>Infrastructure Capability Areas</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div>
+                <h3>Linux Production</h3>
+                <ul>
+                    <li>SUSE Linux & Euler OS</li>
+                    <li>OS patching & maintenance</li>
+                    <li>Filesystem capacity</li>
+                    <li>DNS & SSL lifecycle</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Observability</h3>
+                <ul>
+                    <li>Dynatrace dashboards</li>
+                    <li>Grafana performance</li>
+                    <li>TPS & latency</li>
+                    <li>SLA-driven reviews</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Virtualization</h3>
+                <ul>
+                    <li>VMware vSphere</li>
+                    <li>ESXi host management</li>
+                    <li>vMotion operations</li>
+                    <li>VM lifecycle tasks</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Security SOC</h3>
+                <ul>
+                    <li>SIEM log validation</li>
+                    <li>EDR alert review</li>
+                    <li>Firewall log checks</li>
+                    <li>Incident investigation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Linux Production Systems</h3>
-<ul>
-<li>SUSE Linux & Euler OS administration</li>
-<li>OS patching & maintenance</li>
-<li>Filesystem capacity monitoring</li>
-<li>Service health validation</li>
-<li>DNS & SSL lifecycle management</li>
-</ul>
-</div>
+    <section id="monitoring" class="bento-card half-block">
+        <h2>Monitoring & Performance</h2>
+        <ul>
+            <li>Real-time infrastructure monitoring using Dynatrace & Grafana</li>
+            <li>CPU, memory, disk threshold tuning</li>
+            <li>Filesystem 90% alert policies</li>
+            <li>Transaction performance dashboards</li>
+            <li>Proactive SLA reviews</li>
+        </ul>
+    </section>
 
-<div class="card">
-<h3>Observability & Monitoring</h3>
-<ul>
-<li>Dynatrace dashboards</li>
-<li>Grafana performance tracking</li>
-<li>TPS & latency monitoring</li>
-<li>Alert threshold tuning</li>
-<li>SLA-driven reviews</li>
-</ul>
-</div>
+    <section id="security" class="bento-card half-block">
+        <h2>Security & SOC Operations</h2>
+        <ul>
+            <li>Manual SIEM alert review</li>
+            <li>EDR validation workflows</li>
+            <li>Firewall event checks</li>
+            <li>Escalation coordination</li>
+            <li>Vulnerability monitoring support</li>
+        </ul>
+    </section>
 
-<div class="card">
-<h3>Virtualization</h3>
-<ul>
-<li>VMware vSphere</li>
-<li>ESXi host management</li>
-<li>vMotion operations</li>
-<li>VM lifecycle tasks</li>
-</ul>
-</div>
+    <section id="experience" class="bento-card wide-block">
+        <h2>Professional Experience</h2>
+        <div style="margin-bottom: 40px;">
+            <h3 style="color:#38bdf8;">M-Pesa Africa — Operations Engineer</h3>
+            <p><em>2024 – Present</em></p>
+            <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
+                <li>Maintain Linux production systems (SUSE & EulerOS)</li>
+                <li>Monitor infrastructure performance via Dynatrace & Grafana</li>
+                <li>Triaging 40+ weekly alerts</li>
+                <li>Detailed log and network traffic analysis</li>
+                <li>Reduce repeat incidents by 20%</li>
+                <li>Ensure SLA compliance (Multi-country)</li>
+                <li>Manage VMware vSphere infrastructure</li>
+                <li>Manage firewall rule reviews</li>
+                <li>Develop automation scripts</li>
+                <li>Review SIEM & EDR alerts</li>
+                <li>Support DR testing</li>
+                <li>Regional SPOC (TZ, DRC, LS, MZ, GH)</li>
+            </ul>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #27272a; margin: 30px 0;">
+        <div>
+            <h3 style="color:#38bdf8;">Ryanada Ltd (Truehost/Cloudoon)</h3>
+            <p><em>2022 – 2023</em></p>
+            <ul>
+                <li>Cloud hosting infrastructure support (99.9% uptime)</li>
+                <li>DNS & SSL configuration</li>
+                <li>Troubleshot LAN/WAN and DHCP connectivity</li>
+                <li>Server troubleshooting & REST API support</li>
+                <li>Integrated WordPress with WHMCS & cPanel</li>
+            </ul>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Security Monitoring</h3>
-<ul>
-<li>SIEM log validation</li>
-<li>EDR alert review</li>
-<li>Firewall log checks</li>
-<li>Initial incident investigation</li>
-</ul>
-</div>
+    <section id="contact" class="bento-card wide-block" style="text-align: center;">
+        <h2>Get In Touch</h2>
+        <p><strong>Location:</strong> Nairobi, Kenya</p>
+        <a href="mailto:jaqliyne@outlook.com" class="contact-link">jaqliyne@outlook.com</a>
+        <a href="tel:+254716161929" class="contact-link">+254 716 161 929</a>
+        
+        <div class="social-links" style="justify-content: center;">
+            <a href="https://www.linkedin.com/in/jaqliyne-mwangi/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/JaqliyneW" target="_blank">X</a>
+        </div>
+    </section>
 
-</div>
-</section>
+</main>
 
-<!-- MONITORING -->
-<section id="monitoring">
-<h2>Monitoring & Performance Engineering</h2>
-<ul>
-<li>Real-time infrastructure monitoring using Dynatrace & Grafana</li>
-<li>CPU, memory, disk threshold tuning</li>
-<li>Filesystem 90% alert policies</li>
-<li>Transaction performance dashboards</li>
-<li>Proactive SLA reviews</li>
-</ul>
-</section>
-
-<!-- SECURITY -->
-<section id="security">
-<h2>Security & SOC Operations</h2>
-<ul>
-<li>Manual SIEM alert review</li>
-<li>EDR validation workflows</li>
-<li>Firewall event checks</li>
-<li>Escalation coordination</li>
-<li>Vulnerability monitoring support</li>
-</ul>
-</section>
-
-<!-- INCIDENT -->
-<section id="incident">
-<h2>Incident & Regional Operations</h2>
-<ul>
-<li>P1/P2 primary responder</li>
-<li>Incident bridge participation</li>
-<li>Cross-team escalation</li>
-<li>Regional SPOC support</li>
-<li>RCA contribution</li>
-</ul>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-<h2>Professional Experience</h2>
-
-<div class="timeline-item">
-<h3>M-Pesa Africa — Operations Engineer</h3>
-<p>2024 – Present</p>
-<ul>
-<li>Maintain Linux production systems (SUSE & EulerOS) including scheduled patching and vulnerability remediation</li>
-<li>Monitor infrastructure performance via Dynatrace & Grafana maintaining 99.95%+ system availability</li>
-<li>Triaging 40+ weekly alerts and reducing MTTR by 30% through structured escalation workflows</li>
-<li>Conduct detailed log and network traffic analysis (DNS resolution, port utilization, latency trends)</li>
-<li>Reduce repeat incidents by 20% through root cause documentation and corrective action</li>
-<li>Ensure SLA compliance across multi-country production environments</li>
-<li>Manage VMware vSphere infrastructure (ESXi patching, VM lifecycle, vMotion)</li>
-<li>Manage firewall rule reviews and enforce secure network segmentation</li>
-<li>Develop scripts to automate operational report generation, improving accuracy and reducing manual workload.</li>
-<li>Review SIEM & EDR alerts and coordinate escalation</li>
-<li>Support DR testing and operational resilience validation</li>
-<li>Serve as Regional SPOC for Tanzania, DRC, Lesotho, Mozambique & Ghana</li>
-</ul>
-</div>
-
-<div class="timeline-item">
-<h3>Ryanada Ltd (Truehost/Cloudoon)</h3>
-<p>2022 – 2023</p>
-<ul>
-<li>Cloud hosting infrastructure support</li>
-<li>Maintained 99.9% uptime through proactive monitoring and alert response</li>
-<li>DNS & SSL configuration</li>
-<li>Troubleshot LAN/WAN and DHCP connectivity issues</li>
-<li>Server troubleshooting & REST API support</li>
-<li>Integrated WordPress with WHMCS & cPanel environments</li>
-</ul>
-</div>
-
-<section id="contact">
-<h2>Contact</h2>
-
-<p><strong>Location:</strong> Nairobi, Kenya</p>
-
-<p><strong>Email:</strong> 
-<a href="mailto:jaqliyne@outlook.com">jaqliyne@outlook.com</a>
-</p>
-
-<p><strong>Phone:</strong> 
-<a href="tel:+254716161929">+254 716 161 929</a>
-</p>
-
-<div class="social-links">
-<a href="https://www.linkedin.com/in/jaqliyne-mwangi/" target="_blank">LinkedIn</a>
-<a href="https://x.com/JaqliyneW" target="_blank">X</a>
-</div>
-
-</section>
-
-
-<footer>
-© 2026 Jaqliyne Wambui Mwangi
+<footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.8rem;">
+    © 2026 Jaqliyne Wambui Mwangi
 </footer>
 
 </body>
